@@ -13,7 +13,7 @@ import {
 import { formatNumberWithCommas, formatSum } from "../utils";
 
 interface MyTokenWithPresaleContextData {
-  handlerBuyOnPresale: any;
+  handlerBuyOnPresale: (sum: string) => Promise<void>;
   total: string;
   count: string;
   price: string;
@@ -38,7 +38,7 @@ export const MyTokenWithPresaleProvider = ({ children }: PropsWithChildren) => {
   const provider = new ethers.BrowserProvider(window.ethereum);
   const contractRead = new ethers.Contract(ADDRESS, ABI.result, provider);
 
-  const getTokenLeft = (count: string, total: string) => {
+  const getTokenLeft = (count: string, total: string): void => {
     setTokenLeft(formatSum(count, total));
   };
 
@@ -48,7 +48,7 @@ export const MyTokenWithPresaleProvider = ({ children }: PropsWithChildren) => {
     return Number(stage);
   };
 
-  async function checkTokenBalance() {
+  async function checkTokenBalance(): Promise<void> {
     try {
       const balance = await contractRead.balanceOf(wallet.accounts[0]);
       setTokenBalance(formatEther(balance));
@@ -71,13 +71,9 @@ export const MyTokenWithPresaleProvider = ({ children }: PropsWithChildren) => {
   };
 
   const getTotalSupply = async (): Promise<void> => {
-    try {
-      const total: bigint = await contractRead.totalSupply();
-      const res: string = formatNumberWithCommas(total);
-      setCount(res);
-    } catch (e) {
-      console.log("err", e);
-    }
+    const total: bigint = await contractRead.totalSupply();
+    const res: string = formatNumberWithCommas(total);
+    setCount(res);
   };
 
   const getFinalTotalSupply = async (): Promise<void> => {
@@ -96,7 +92,7 @@ export const MyTokenWithPresaleProvider = ({ children }: PropsWithChildren) => {
 
   const handlerBuyOnPresale = async (sum: string): Promise<void> => {
     if (window.ethereum) {
-      const balance = formatEther(
+      const balance: string = formatEther(
         await provider.getBalance(wallet.accounts[0])
       );
 
@@ -112,9 +108,12 @@ export const MyTokenWithPresaleProvider = ({ children }: PropsWithChildren) => {
 
       const signer = await provider.getSigner();
       const contractWrite = new ethers.Contract(ADDRESS, ABI.result, signer);
-      const amount = parseUnits(sum, 18);
+      const amount: bigint = parseUnits(sum, 18);
       try {
         const tx = await contractWrite.buyOnPresale({ value: amount });
+        setTimeout(() => {
+          toast.warning("Please wait for the transaction to complete");
+        }, 2000);
         const response = await tx.wait();
         console.log("response: ", response);
         toast.success("Success");
@@ -155,6 +154,8 @@ export const MyTokenWithPresaleProvider = ({ children }: PropsWithChildren) => {
   );
 };
 export const useMyTokenWithPresale = () => {
-  const context = useContext(MyTokenWithPresaleContext);
+  const context = useContext<MyTokenWithPresaleContextData>(
+    MyTokenWithPresaleContext
+  );
   return context;
 };

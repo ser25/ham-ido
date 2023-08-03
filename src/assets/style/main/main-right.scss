@@ -1,9 +1,13 @@
 .mint-right-title {
   &__title {
-    font-size: 50px;
+    font-size: 30px;
     margin-top: 0;
+    @media (min-width: 512px) {
+      font-size: 50px;
+    }
   }
 }
+
 .main-right {
   &__finished {
     font-size: 24px;
@@ -12,14 +16,17 @@
     margin: 20px 0;
   }
 }
+
 .unlimited-sale {
   display: flex;
   justify-content: center;
+
   .main-boarder {
     @media (min-width: 1024px) {
       width: 600px;
     }
   }
+
   &__title {
     font-size: 20px;
     font-weight: 600;
@@ -29,5 +36,8 @@
 
 .unlimited-sale-container {
   width: 100%;
-  padding: 20px 80px;
+  padding: 0 0;
+  @media (min-width: 600px) {
+    padding: 20px 80px;
+  }
 }

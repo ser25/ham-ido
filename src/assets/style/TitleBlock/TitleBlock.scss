@@ -1,18 +1,20 @@
-.title-block{
-    &__title{
+.title-block {
+  &__title {
+    font-size: 50px;
+    @media (min-width: 500px) {
       font-size: 80px;
     }
-  &__subtitle{
+  }
+  &__subtitle {
     font-size: 24px;
     font-family: "Wellfleet", cursive;
   }
-  &__button{
+  &__button {
     margin-top: 100px;
     display: flex;
     justify-content: end;
-    a{
+    a {
       display: inline-block;
     }
-
   }
 }

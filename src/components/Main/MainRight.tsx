@@ -1,7 +1,7 @@
 import Hamster from "../../assets/img/dot.png";
 import UnlimitedSale from "../UnlimitedSale/UnlimitedSale.tsx";
 import { useMyTokenWithPresale } from "../../hooks/useMyTokenWithPresale.tsx";
-import { BLOCKCHAIN } from "../../assets/data/config.ts";
+import { BLOCKCHAIN, FOR_WHOM_IDO_IS } from "../../assets/data/config.ts";
 
 const MainRight = () => {
   const { stage } = useMyTokenWithPresale();
@@ -16,7 +16,7 @@ const MainRight = () => {
           <img src={Hamster} alt="" />
         </div>
         <div className={"mint-right-title__title bg-ham"}>
-          Hamster {BLOCKCHAIN}
+          {FOR_WHOM_IDO_IS} {BLOCKCHAIN}
         </div>
       </div>
       <div className={"main-right__finished text-center"}>

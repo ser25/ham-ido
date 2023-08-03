@@ -5,7 +5,11 @@ import {
   getYouWillCoin,
 } from "../../utils";
 import { useMyTokenWithPresale } from "../../hooks/useMyTokenWithPresale.tsx";
-import { BLOCKCHAIN, TOKEN_NAME } from "../../assets/data/config.ts";
+import {
+  BLOCKCHAIN,
+  MINIMUM_COMMIT,
+  TOKEN_NAME,
+} from "../../assets/data/config.ts";
 import { FC } from "react";
 
 type UnlimitedSaleInformationProps = {
@@ -23,7 +27,7 @@ const UnlimitedSaleInformation: FC<UnlimitedSaleInformationProps> = ({
     },
     {
       title: "Minimum Commit",
-      data: `10 ${BLOCKCHAIN}`,
+      data: `${MINIMUM_COMMIT} ${BLOCKCHAIN}`,
     },
     {
       title: "Total committed",
@@ -36,13 +40,13 @@ const UnlimitedSaleInformation: FC<UnlimitedSaleInformationProps> = ({
   ];
   return (
     <>
-      <div className={"d-flex justify-content-between my-3"}>
+      <div className={"d-flex justify-content-between my-3 flex-wrap"}>
         <button
           className={"btn btn-outline-dark"}
           style={{ marginBottom: 10, marginTop: 10 }}
           onClick={addTokenToMetaMask}
         >
-          Add token SRGT to Metamask
+          Add token {TOKEN_NAME} to Metamask
         </button>
 
         <div>

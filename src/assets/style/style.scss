@@ -34,6 +34,17 @@
   }
 }
 
+.footer__list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  li {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .shadow {
   position: relative;
   display: flex;
@@ -704,7 +715,7 @@ footer .container .socials a:hover svg {
 
 .main-wrapper {
   display: grid;
-  height: 100vh;
+  height: 100%;
   grid-template-rows: 80px auto 50px;
 }
 
@@ -1093,9 +1104,9 @@ footer .container .socials a:hover svg {
   .mint-block {
     margin-bottom: 20px;
   }
-  .custom-button {
-    margin-bottom: 10px;
-  }
+  //.custom-button {
+  //  margin-bottom: 10px;
+  //}
 }
 
 .nav-links {
@@ -1156,4 +1167,22 @@ footer .container .socials a:hover svg {
   .poem-wrapper {
     font-size: 16px;
   }
+}
+
+.nav-link {
+  background-color: #fff !important;
+  border-color: #212529 !important;
+  margin: 10px !important;
+  font-family: "Neucha", cursive;
+  color: #000000 !important;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: 15px !important;
+  padding: 1rem 2rem 0.85rem 2rem;
+  transform-origin: right;
+  transition: all 0.3s ease;
+}
+.nav-tabs .nav-link.active {
+  background-color: #212529 !important;
+  color: #fff !important;
 }

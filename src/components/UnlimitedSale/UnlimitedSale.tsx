@@ -42,7 +42,7 @@ const UnlimitedSale = () => {
             onInvalid={() => toast.error("Incorrect value")}
           />
         ) : (
-          "0 SUI"
+          `0 ${BLOCKCHAIN}`
         ),
       subtitle: "100% of total",
     },

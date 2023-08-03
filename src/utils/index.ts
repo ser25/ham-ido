@@ -53,7 +53,7 @@ export function formatPercentage(count: string, total: string) {
   return `${percentage.toFixed(2)}%`;
 }
 
-export function getYouWillCoin(value: string, price: string) {
+export function getYouWillCoin(value: string, price: string): string {
   if (+value === 0 || +price === 0) return "0";
   const num1 = new Decimal(value);
   const num2 = new Decimal(price);

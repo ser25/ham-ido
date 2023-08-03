@@ -1,54 +1,53 @@
-
-.vesting{
-  &__image{
+.vesting {
+  &__image {
     width: 64px;
     height: 64px;
   }
-  &__title{
+  &__title {
     font-size: 20px;
     font-weight: 600;
     font-family: "Wellfleet", cursive;
   }
-  &__text{
+  &__text {
     font-size: 18px;
     font-weight: 400;
   }
 }
 //sale
-.sale{
-  &__image{
-    img{
+.sale {
+  &__image {
+    img {
       width: 64px;
       height: 64px;
       border-radius: 50%;
     }
   }
-  &__title{
+  &__title {
     font-size: 20px;
     font-weight: 600;
     font-family: "Wellfleet", cursive;
     margin: 10px 0;
   }
-  &__total{
+  &__total {
     font-size: 16px;
     font-family: "Wellfleet", cursive;
   }
 }
-.token-allocation{
-  &__title{
+.token-allocation {
+  &__title {
     font-size: 20px;
     font-weight: 600;
     font-family: "Wellfleet", cursive;
     margin-bottom: 10px;
   }
 }
-.main-left__body{
+.main-left__body {
   margin-bottom: 10px;
 }
-.main-left{
-  .main-boarder{
+.main-left {
+  .main-boarder {
     @media (min-width: 1024px) {
-      width: 500px;
+      //width: 500px;
     }
   }
 }

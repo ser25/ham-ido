@@ -18,7 +18,6 @@ const UnlimitedSaleButtonBlock = ({
       {hasProvider && wallet.accounts.length > 0 ? (
         <button
           className="wkit-button custom-button gradient-button commit-sui"
-          // @ts-ignore
           onClick={() => handlerBuyOnPresale(inputValue)}
         >
           Commit {BLOCKCHAIN}

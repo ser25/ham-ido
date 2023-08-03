@@ -7,10 +7,17 @@ header {
 header .container {
   position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 25px;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
+  @media (min-width: 760px) {
+    flex-direction: inherit;
+    gap: 0;
+    padding-top: 10px;
+  }
 }
 header .container .logo_block {
   display: flex;
@@ -32,9 +39,9 @@ header .container nav ul li a svg {
   /*height: 30px;*/
 }
 @media screen and (max-width: 430px) {
-  header .container .logo_block .logo {
-    height: 17px;
-  }
+  //header .container .logo_block .logo {
+  //  height: 17px;
+  //}
   header .container .logo_block .dot {
     position: absolute;
     right: -1.5px;
@@ -47,9 +54,9 @@ header .container nav ul li a svg {
   }
 }
 @media screen and (max-width: 375px) {
-  header .container .logo_block .logo {
-    height: 15px;
-  }
+  //header .container .logo_block .logo {
+  //  height: 15px;
+  //}
   header .container .logo_block .dot {
     position: absolute;
     right: -1.5px;
@@ -62,9 +69,9 @@ header .container nav ul li a svg {
   }
 }
 @media screen and (max-width: 340px) {
-  header .container .logo_block .logo {
-    height: 12px;
-  }
+  //header .container .logo_block .logo {
+  //  height: 12px;
+  //}
   header .container .logo_block .dot {
     position: absolute;
     right: -1px;
