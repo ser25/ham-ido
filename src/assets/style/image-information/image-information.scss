@@ -1,0 +1,24 @@
+.image-information{
+  margin-bottom: 15px;
+  &__image{
+    img{
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+  }
+  &__title{
+    font-size: 16px;
+    font-family: "Wellfleet", cursive;
+  }
+  &__total{
+    font-size: 18px;
+    font-family: "Wellfleet", cursive;
+    font-weight: 600;
+    margin-top: 1px;
+  }
+  &__subtitle{
+    font-size: 16px;
+    font-family: "Wellfleet", cursive;
+  }
+}

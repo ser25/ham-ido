@@ -1,0 +1,33 @@
+.mint-right-title {
+  &__title {
+    font-size: 50px;
+    margin-top: 0;
+  }
+}
+.main-right {
+  &__finished {
+    font-size: 24px;
+    font-family: "Wellfleet", cursive;
+    font-weight: 600;
+    margin: 20px 0;
+  }
+}
+.unlimited-sale {
+  display: flex;
+  justify-content: center;
+  .main-boarder {
+    @media (min-width: 1024px) {
+      width: 600px;
+    }
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Wellfleet", cursive;
+  }
+}
+
+.unlimited-sale-container {
+  width: 100%;
+  padding: 20px 80px;
+}

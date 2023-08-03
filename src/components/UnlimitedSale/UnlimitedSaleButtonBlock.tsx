@@ -1,0 +1,30 @@
+import ButtonConnectMetaMask from "../ButtonConnectMetaMask.tsx";
+import { useMetaMask } from "../../hooks/useMetaMask.tsx";
+import { useMyTokenWithPresale } from "../../hooks/useMyTokenWithPresale.tsx";
+
+type UnlimitedSaleButtonBlockProps = {
+  inputValue: string;
+};
+
+const UnlimitedSaleButtonBlock = ({
+  inputValue,
+}: UnlimitedSaleButtonBlockProps) => {
+  const { wallet, hasProvider } = useMetaMask();
+  const { handlerBuyOnPresale } = useMyTokenWithPresale();
+  return (
+    <div className={"d-flex justify-content-center"}>
+      {hasProvider && wallet.accounts.length > 0 ? (
+        <button
+          className="wkit-button custom-button gradient-button commit-sui"
+          onClick={() => handlerBuyOnPresale(inputValue)}
+        >
+          Commit Sui
+        </button>
+      ) : (
+        <ButtonConnectMetaMask />
+      )}
+    </div>
+  );
+};
+
+export default UnlimitedSaleButtonBlock;
