@@ -1,10 +1,14 @@
+import { BLOCKCHAIN } from "../../assets/data/config.ts";
+
 const TitleBlock = () => {
   return (
     <section className={"title-block text-center"}>
       <div className="container">
-        <h1 className={"title-block__title bg-ham"}>Hamsters IDO Sui</h1>
+        <h1 className={"title-block__title bg-ham"}>
+          Hamsters IDO {BLOCKCHAIN}
+        </h1>
         <div className="title-block__subtitle">
-          Buy new tokens launching on SUI
+          Buy new tokens launching on {BLOCKCHAIN}
         </div>
         {/*<div className="title-block__button">*/}
         {/*    <a href={'#'} className="wkit-button custom-button gradient-button">How does it work?</a>*/}

@@ -27,7 +27,7 @@ const UnlimitedSaleInformation: FC<UnlimitedSaleInformationProps> = ({
     },
     {
       title: "Total committed",
-      data: `${tokenLeft} SUI (${formatPercentage(count, total)})`,
+      data: `${tokenLeft} ${TOKEN_NAME} (${formatPercentage(count, total)})`,
     },
     // {
     //   title: "Funds to raise",

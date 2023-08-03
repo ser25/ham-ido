@@ -1,9 +1,9 @@
 import logo from "./../assets/img/logo.png";
 import dot from "./../assets/img/dot.png";
-import { useState } from "react";
-import { toast } from "react-toastify";
-import { useMetaMask } from "../hooks/useMetaMask.tsx";
-import { formatAddress } from "../utils";
+// import { useState } from "react";
+// import { toast } from "react-toastify";
+// import { useMetaMask } from "../hooks/useMetaMask.tsx";
+// import { formatAddress } from "../utils";
 import ButtonConnectMetaMask from "../components/ButtonConnectMetaMask.tsx";
 
 export default function header() {

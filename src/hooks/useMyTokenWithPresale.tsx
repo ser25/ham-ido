@@ -13,7 +13,7 @@ import {
 import { formatNumberWithCommas, formatSum } from "../utils";
 
 interface MyTokenWithPresaleContextData {
-  handlerBuyOnPresale: Promise<void>;
+  handlerBuyOnPresale: any;
   total: string;
   count: string;
   price: string;
